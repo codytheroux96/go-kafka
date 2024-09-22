@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"log"
 
-	"github.com/gofiber/fiber/v2"
 	"github.com/IBM/sarama"
+	"github.com/gofiber/fiber/v2"
 )
 
 type Comment struct {
@@ -19,7 +19,7 @@ func main() {
 	app.Listen(":3000")
 }
 
-func ConnectProducer(brokersUrl []string)(sarama.SyncProducer, error) {
+func ConnectProducer(brokersUrl []string) (sarama.SyncProducer, error) {
 	config := sarama.NewConfig()
 	config.Producer.Return.Successes = true
 	config.Producer.RequiredAcks = sarama.WaitForAll
