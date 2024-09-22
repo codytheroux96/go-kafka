@@ -8,7 +8,7 @@ type Comment struct {
 	Text string `form:"text" json:"text"`
 }
 
-func mian() {
+func main() {
 	app := fiber.New()
 	api := app.Group("/api/v1")
 	api.Post("/comments", createComment)
